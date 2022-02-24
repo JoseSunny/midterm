@@ -138,7 +138,7 @@ module.exports = class LockDownEssentials extends Order {
                 }
                 else if (sInput.toLowerCase() == "no") {
                     aReturn.push("Thank-you for your order of");
-                    for (let k = 0; k <= i; k++) {                               
+                    for (let k = 0; k < i; k++) {                               
                         aReturn.push(`${ItemsPurchased[k]}`);
                     }
                     for (let L = 0; L < j; L++) {                                  
