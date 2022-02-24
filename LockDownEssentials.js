@@ -54,6 +54,7 @@ module.exports = class LockDownEssentials extends Order {
                         total = total + 25;
                     }
                     aReturn.push("Item added to Cart");
+                    i = i + 1;
                     this.stateCur = OrderState.MoreItems;
                     aReturn.push("Would you like to purchase more item  : (yes or No)");
                 }
@@ -71,7 +72,7 @@ module.exports = class LockDownEssentials extends Order {
                         aReturn.push("Select an item from the below list");
                         aReturn.push(`${this.sUrl}/payment/${this.sNumber}/`);
                         this.stateCur = OrderState.ITEM;
-                        i = i + 1;
+                     
                     }
                     else if (sInput.toLowerCase() == "no") {
                         this.stateCur = OrderState.UPSELLINITIALCHECK;
@@ -138,7 +139,7 @@ module.exports = class LockDownEssentials extends Order {
                 }
                 else if (sInput.toLowerCase() == "no") {
                     aReturn.push("Thank-you for your order of");
-                    for (let k = 0; k < i; k++) {                               
+                    for (let k = 0; k <= i; k++) {                               
                         aReturn.push(`${ItemsPurchased[k]}`);
                     }
                     for (let L = 0; L < j; L++) {                                  
